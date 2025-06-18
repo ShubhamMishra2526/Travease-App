@@ -38,7 +38,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   // By not just sending and making all the data sent by the client to be stored in DB we only allow some specific data to be stored as this will ensure that a user does not sign in as an admin
   const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+  // console.log(url);
   await new Email(newUser, url).sendWelcome();
   createAndSendToken(newUser, 201, res);
 });

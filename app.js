@@ -7,9 +7,9 @@ const XSS = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
+const compression = require('compression');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/ErrorController');
-
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
@@ -89,6 +89,8 @@ app.use(
     ],
   }),
 );
+
+app.use(compression());
 
 // express.static() is a built-in middleware function in Express. It serves static files and is based on serve-static. It can take a path as an argument and will serve the files in that directory. The path can be absolute or relative to the current working directory. The path can also be a URL.
 
