@@ -1,3 +1,3 @@
 # Travease Application
 
-Built using mongoDB, mongoose, Node.js, PUG, HTML, CSS etc.
+Built using mongoDB, mongoose, Node.js, Express, PUG, HTML, CSS etc.
