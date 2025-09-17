@@ -1,3 +1,5 @@
 # Travease Application
 
-Built using mongoDB, mongoose, Node.js, Express, PUG, HTML, CSS etc.
+- Tech Stack : MERN
+- Travel and tours booking application
+- Scalable and maintainable
