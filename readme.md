@@ -1,5 +1,5 @@
 # Travease Application
 
-- Tech Stack : MERN
-- Travel and tours booking application
+- Tech Stack : MongoDb, Node, Express, PUG, HTML, CSS.
+- Travel and tours booking API
 - Scalable and maintainable
