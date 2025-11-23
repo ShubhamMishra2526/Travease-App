@@ -39,15 +39,15 @@ exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get('host')}/me`;
   // console.log(url);
-  try {
-    await new Email(newUser, url).sendWelcome();
-  } catch (err) {
-    // If email fails, just log the error to the console...
-    console.log('⚠️ Email could not be sent (Ignored for Signup flow):', err);
+  // try {
+  //   await new Email(newUser, url).sendWelcome();
+  // } catch (err) {
+  //   // If email fails, just log the error to the console...
+  //   console.log('⚠️ Email could not be sent (Ignored for Signup flow):', err);
 
-    // ...but DO NOT stop the function!
-    // We want the user to be logged in even if they didn't get the email.
-  }
+  //   // ...but DO NOT stop the function!
+  //   // We want the user to be logged in even if they didn't get the email.
+  // }
   createAndSendToken(newUser, 201, res);
 });
 
