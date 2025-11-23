@@ -1,3 +1,5 @@
 # Travease Application
 
-Built using mongoDB, mongoose, Node.js, PUG, HTML, CSS etc.
+- Tech Stack : MongoDb, Node, Express, PUG, HTML, CSS.
+- Travel and tours booking API
+- Scalable and maintainable
