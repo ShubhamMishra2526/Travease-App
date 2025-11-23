@@ -3,7 +3,7 @@
 import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { bookTour } from './stripe';
-import { login, logout } from './login';
+import { login, logout, signup } from './login';
 import { updateSettings } from './updateSettings';
 
 // DOM ELEMENTS
@@ -13,6 +13,7 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordChange = document.querySelector('.form-user-settings');
 const bookBtn = document.getElementById('book-tour');
+const signupForm = document.querySelector('.form--signup');
 
 // DELEGATIONS
 if (mapBox) {
@@ -28,6 +29,31 @@ if (loginForm) {
     const password = document.getElementById('password').value;
     login(email, password);
   });
+}
+
+if (signupForm) {
+  console.log('✅ SUCCESS: Signup Form found in HTML!');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('👆 BUTTON CLICKED: Form is submitting...');
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+
+    console.log('📝 DATA COLLECTED:', {
+      name,
+      email,
+      password,
+      passwordConfirm,
+    });
+
+    signup(name, email, password, passwordConfirm);
+  });
+} else {
+  console.log('❌ ERROR: Could not find element with class .form--signup');
 }
 
 if (logOutBtn) logOutBtn.addEventListener('click', logout);
